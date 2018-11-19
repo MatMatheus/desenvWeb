@@ -1,0 +1,72 @@
+Detalhes<html>
+    <head>
+        <title>QUEM SOMOS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/quem_somos.css" />
+
+    </head>
+    <body>
+
+        <div id="divEsquerda"> 
+            <img src="img/logo.png" width="100" height ="100" float="left"> 
+            <p>   
+        </div>
+
+        <div id="divBusca"> 
+            <input type="text" id="txtBusca" placeholder="Buscar..."/>       
+            <img src="img/busca.png" width="30" height ="30" id="btnBusca" alt="Buscar"/> 
+        </div>
+
+
+        <div id="divEsquerda">
+            <a href="fale_conosco.html"><img src="img/telefone.png" alt="fale" width="30" height ="30"></a>
+            <p>fale conosco</p>
+        </div>
+        <div id="divEsquerda">
+            <p> nos acompanhe: </p>
+
+            <a href="https://pt-br.facebook.com/anhembi.morumbi/" target="_blank"><img src="img/face.png" alt="facebook" width="20" height ="20"></a>
+
+            <a href="https://www.instagram.com/anhembimorumbi" target="_blank"><img src="img/insta.png" alt="instagran" width="20" height ="20"></a>
+        </div> 
+
+        <div id="divEsquerda">
+
+            <a href="index.php"><b>HOME</b></a>
+
+
+
+            <h1> Quem somos </h1>
+
+            <p><b>
+                    "A música é barulho que pensa" - Victor Hugo
+            </p></b>
+
+        <p>
+            O Mundo de Músicas é um blog que apresenta uma visão panorâmica sobre o fenómeno musical em 
+            todas as suas vertentes. Produtores, músicos, fabricantes de instrumentos, 
+            managers, designers, roadies e técnicos de som: todas as personagens que 
+            compõe a indústria da música merecem o nosso olhar, pois conforme defendia 
+            o famoso Lester Bangs, uma banda ou um artista (e a sua personalidade) nunca é composta
+            somente pelos músicos que a integram, mas sim por toda e qualquer pessoa que 
+            rodeie os seus elementos.
+        </p>
+
+        <hr>
+        <div class="circle">
+            <img src="img/gil.jpg" alt="imaginem programadora do site" width="150" height ="150">
+        </div>
+
+        <hr>
+
+        <div class="circle">
+            <img src="img/matheus.jpg" alt="imaginem programador do site" width="150" height ="150" >
+        </div>
+        <hr>
+        <div class="circle">
+            <img src="img/pedro.jpg" alt="imaginem programador do site" width="150" height ="150" >
+        </div>
+
+</body>
+</html>
