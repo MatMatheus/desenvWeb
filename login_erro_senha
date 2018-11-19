@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>WebMusic</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/bootpages.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+
+                <div class="float-left"> 
+                    <div class="ml-50">
+                        <img src="img/logo.png" width="100" height ="100"> 
+                        <p>   
+                    </div>
+                </div>
+
+                <div class="float-left"> 
+                    <div class="ml-50">
+                        <div id="divBusca"> 
+                            <input type="text" id="txtBusca" placeholder="Buscar..."/>       
+                            <img src="img/busca.png" width="30" height ="30" id="btnBusca" alt="Buscar"/> 
+                        </div>
+                    </div>
+                </div>
+                <div class="float-left"> 
+                    <div class="text-nowrap" style="width: 4rem;">
+                        |
+                    </div>
+                </div>
+
+                <div class="float-left"> 
+                    <div class="ml-50">
+
+                        <a href="index.php"><img src="img/logo.png" alt="home" width="30" height ="30"></a>
+                        <div class="text-nowrap" style="width: 6rem;">
+                            home
+                        </div>
+                    </div>
+                </div>
+                <div class="float-left"> 
+                    <div class="ml-50">
+                        <a href="fale_conosco.html"><img src="img/telefone.png" alt="fale" width="30" height ="30"></a>
+                        <div class="text-nowrap" style="width: 10rem;">
+                            fale conosco
+                        </div>
+                    </div>
+                </div>
+                <?php
+                session_start();
+                if (isset($_SESSION['user'])) {
+                    $new_user = $_SESSION['user'];
+                } else {
+                    $new_user = "";
+                }
+
+                session_destroy();
+                unset($_SESSION);
+                ?>
+                <div class = "float-left">
+                    <div class = "ml-50">
+                        <a href = "login.php" id=logout1><img src = "img/cadastro.png" alt = "login" width = "30" height = "30"></a>
+                        <div class = "text-nowrap" style = "width: 10rem;">Login</div>
+                    </div>
+                </div>
+                <div class="float-left"> 
+                    <div class="ml-50">
+                        <div class="text-nowrap" style="width: 4rem;">
+                            nos acompanhe
+                        </div>
+
+                        <a href="https://pt-br.facebook.com/anhembi.morumbi/" target="_blank"><img src="img/face.png" alt="facebook" width="20" height ="20"></a>
+
+                        <a href="https://www.instagram.com/anhembimorumbi" target="_blank"><img src="img/insta.png" alt="instagran" width="20" height ="20"></a>
+                    </div> 
+                </div> 
+            </div> 
+            <div class="row justify-content-md-center">
+                <div class="alert alert-danger" role="alert">
+                    <?php
+                    echo "<h4 class=\"alert-heading\">";
+                    echo "Prezado!";
+                    echo "</h4>";
+                    echo "<p>Lamentamos mas não reconhecemos a senha digitada, ela não confere com a senha armazenada em nosso sistema para o e-mail '" . $new_user . "'.</p>";
+                    ?>
+                    <hr>
+                    <p class="mb-0">Não lembra sua senha? Tudo bem, acesse a sessão 'Recuperação de Senha' e enviaremos uma nova senha. Dúvidas acesse a sessão 'Fale Conosco' e deixe seu recado!</p>
+                    <br>
+                    <div class="col-lg-12" style="text-align:center">
+                        <a href="login.php" class="btn btn-warning" role="button">Tente novamente</a>
+                        <a href="senha.php" class="btn btn-success" role="button">Recuperação de Senha</a>
+                        <a href="fale_conosco.html" class="btn btn-info" role="button">Fale Conosco</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
