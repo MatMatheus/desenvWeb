@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <title>WebMusic</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/general.css" />
+        <link rel="stylesheet" type="text/css" href="css/wowslider/style.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+    </head>
+    <body>
+
+        <div id="divEsquerda"> 
+            <img src="img/logo.png" width="100" height ="100" float="left"> 
+            <p>   
+        </div>
+
+        <div id="divBusca"> 
+            <input type="text" id="txtBusca" placeholder="Buscar..."/>       
+            <img src="img/busca.png" width="30" height ="30" id="btnBusca" alt="Buscar"/> 
+        </div>
+
+        <div id="divEsquerda">
+      // coleta do usuário para o banco de dados 
+            <?php
+            session_start();
+            if (isset($_SESSION['user'])) {
+                $user = $_SESSION['user'];
+                echo "<a href=\"logout_sucesso.php\">";
+                echo "<img src=\"img/logout.png\" alt=\"fale\" width=\"30\" height =\"30\">";
+                echo "</a>";
+                echo "<p>Sair</p>";
+            } else {
+                echo "<a href=\"login.php\">";
+                echo "<img src=\"img/cadastro.png\" alt=\"fale\" width=\"30\" height =\"30\">";
+                echo "</a>";
+                echo "<p>Login</p>";
+            }
+            ?>
+        </div>
+       // itens do cabeçalho da home
+        <div id="divEsquerda">
+            <a href="fale_conosco.html"><img src="img/telefone.png" alt="fale" width="30" height ="30"></a>
+            <p>fale conosco</p>
+        </div>
+        <div id="divEsquerda">
+            <p> nos acompanhe:  </p>
+
+            <a href="https://pt-br.facebook.com/anhembi.morumbi/" target="_blank"><img src="img/face.png" alt="facebook" width="20" height ="20"></a>
+
+            <a href="https://www.instagram.com/anhembimorumbi" target="_blank"><img src="img/insta.png" alt="instagran" width="20" height ="20"></a>
+        </div> 
+
+        <div id="divEsquerda">
+            <p>Carrinho:</p>   
+            <a href="carrinho.php"><img src="img/carrinho.png" alt="carrinho"  width="30" height="30"></a>
+
+        </div>
+
+        <?php
+        if (isset($user)) {
+            echo "<div id=\"divDireita\">";
+            echo "<a href=\"logout_sucesso.php\">";
+            echo "Você não é " . $user . "?";
+            echo "</a>";
+            echo "</div>";
+        }
+        ?>
+        <div class="nav" id="divEsquerda">
+
+             //menu dividido em categorias
+            <a class="linkmenu" href="cat_audio.html"><b>AUDIO</b></a> 
+            <a class="linkmenu" href="cat_cordas.html"><b>CORDAS</b></a>
+            <a class="linkmenu" href="cat_percursao.html"><b>PERCURSÃO</b></a>
+            <a class="linkmenu" href="cat_teclas.html"><b>TECLAS</b></a>
+            <a class="linkmenu" href="cat_sopro.html"><b>SOPRO</b></a>
+            <a class="linkmenu" href="quem-somos.html"><b>QUEM SOMOS</b></a>
+            <?php
+            if (isset($user)) {
+                echo "<a class=\"linkmenu\" href=\"carrinho.php\">";
+                echo "<b>CARRINHO</b>";
+                echo "</a>";
+            } else {
+                echo "<a class=\"linkmenu\" href=\"cadastro.php\">";
+                echo "<b>CADASTRE-SE</b>";
+                echo "</a>";
+            }
+            ?>
+
+            <p>
+        </div>
+
+        <!-- Start WOWSlider.com BODY section -->
+        <div id="wowslider-container1">
+            // código do banner com ums liata de imagens 
+            <div class="ws_images"><ul>
+                    <li><img src="img/wowslider/images/microfone.jpg" alt="R$200,00" title="R$200,00" id="wows1_0"/></li>
+                    <li><img src="img/wowslider/images/bateria2.jpg" alt="R$600,00" title="R$600,00" id="wows1_1"/></li>
+                    <li><img src="img/wowslider/images/flauta.jpg" alt="R$400,00" title="R$400,00" id="wows1_2"/></li>
+                    <li><img src="img/wowslider/images/teclado.jpg" alt="R$220,00" title="R$220,00" id="wows1_3"/></li>
+                    <li><img src="img/wowslider/images/teclado2.jpg" alt="R$440,00" title="R$440,00" id="wows1_4"/></li>
+                    <li><img src="img/wowslider/images/violao.jpg" alt="Cada por R$40,00" title="Cada por R$40,00" id="wows1_5"/></li>
+                    <li><a href="http://wowslider.net"><img src="img/wowslider/images/violao2.jpg" alt="css slideshow" title="R$20,00" id="wows1_6"/></a></li>
+                    <li><img src="img/wowslider/images/bateria.jpg" alt="R$60,00" title="R$60,00" id="wows1_7"/></li>
+                </ul></div>
+            <div class="ws_bullets"><div>
+            // Âncoras para ao clicar nas imagens do banner direcionar para a paginas de compra dos produtos
+                    <a href="item_microfone.html" title="R$200,00"><span><img src="img/wowslider/bullets/microfone.jpg" alt="R$200,00"/>1</span></a>
+                    <a href="item_bateria.html" title="R$600,00"><span><img src="img/wowslider/bullets/bateria2.jpg" alt="R$600,00"/>2</span></a>
+                    <a href="item_flauta.html" title="R$400,00"><span><img src="img/wowslider/bullets/flauta.jpg" alt="R$400,00"/>3</span></a>
+                    <a href="item_teclado.html" title="R$220,00"><span><img src="img/wowslider/bullets/teclado.jpg" alt="R$220,00"/>4</span></a>
+                    <a href="item_teclado2.html" title="R$440,00"><span><img src="img/wowslider/bullets/teclado2.jpg" alt="R$440,00"/>5</span></a>
+                    <a href="item_viola.html" title="Cada por R$40,00"><span><img src="img/wowslider/bullets/violao.jpg" alt="Cada por R$40,00"/>6</span></a>
+                    <a href="item_viola.html" title="R$20,00"><span><img src="img/wowslider/bullets/violao2.jpg" alt="R$20,00"/>7</span></a>
+                    <a href="item_bateria.html" title="R$60,00"><span><img src="img/wowslider/bullets/bateria.jpg" alt="R$60,00"/>8</span></a>
+                </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">image slider</a> by WOWSlider.com v8.8</div>
+            <div class="ws_shadow"></div>
+        </div>	
+        <script type="text/javascript" src="js/wowslider.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <!-- End WOWSlider.com BODY section -->
+
+
+         // Produtos e valores que ficam no fim da home com link para mais informações dos produtos
+
+        <div id="divEsquerda">
+            <img src="img/violao2.jpg" width="150" height ="150" >       
+            <form action="item_guitarra.html">   
+                <p> R$2.000,00
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+        </div>
+        <div id="divEsquerda">
+            <img src="img/bateria.jpg" width="150" height ="150" >       
+            <form action="item_bateria.html">   
+                <p> R$8.000,00
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+        </div>
+        <div id="divEsquerda">
+            <img src="img/bateria2.jpg" width="150" height ="150" >       
+            <form action="item_tamborim.html">   
+                <p> R$8.800,00
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+        </div>
+        <div id="divEsquerda">
+            <img src="img/flauta.jpg" width="150" height ="150" >       
+            <form action="item_flauta.html">   
+                <p> R$800,00
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+        </div>
+        <div id="divEsquerda">
+            <img src="img/teclado.jpg" width="150" height ="150" >       
+            <form action="item_teclado.html">   
+                <p> R$800,00
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+        </div>
+        <div id="divEsquerda">
+            <img src="img/teclado2.jpg" width="150" height ="150" >       
+            <form action="item_teclado2.html">   
+                <p> R$80.000,080
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+        </div>
+
+        <div id="divEsquerda">
+            <img src="img/arpa.jpg" width="150" height ="150" >       
+            <form action="item_arpa.html">   
+                <p> R$20.000,000
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+
+        </div>
+
+        <div id="divEsquerda">
+            <img src="img/fone.jpg" width="150" height ="150" >       
+            <form action="item_fone.html">   
+                <p> R$20,00
+                <p> <input type="submit" value="Comprar"> </p>
+            </form>
+
+        </div>
+
+
+        <?php
+        require_once '../vendor/autoload.php';
+        ?>
+    </body>
+
+
+</html>
